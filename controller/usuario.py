@@ -30,3 +30,14 @@ def consultarUsuarios():
 @usuario_blueprint.route('/usuarios/form')
 def abrirCadastroUsuario():
     return render_template('cadastrarUsuario.html')
+
+@usuario_blueprint.route('/usuario/edit', methods=['POST'])
+def viewFormEdit():
+    nome = request.form.get('nome')
+    email = request.form.get('email')
+    usuario = Usuario.query.filter(Usuario.email == email)
+    return render_template('editarUsuario.html', usuario=usuario.id)
+
+@usuario_blueprint.route('/usuario/delete')
+def deleteUser():
+    db.session.delete()
