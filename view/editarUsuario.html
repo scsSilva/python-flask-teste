@@ -21,7 +21,7 @@
 
   <!-- Preloader -->
   <div class="preloader flex-column justify-content-center align-items-center">
-    <img class="animation__shake" src="../../dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
+    <span>Tasks</span>
   </div>
 
   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -165,12 +165,12 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
-        <form action="/cadastrarUsuario" method="post">
+        <form action="{{ url_for('abrirEditarUsuario', index=usuario.id) }}" method="POST">
             <label for="fname">Nome:</label><br>
             <input type="text" id="fname" name="nome"><br>
             <label for="lname">Email:</label><br>
             <input type="email" id="lname" name="email"><br><br>
-            <input type="submit" value="Cadastrar">
+            <input type="submit" value="Atualizar">
         </form> 
       </div><!-- /.container-fluid -->
     </section>

@@ -181,21 +181,22 @@
             <tbody>
               {% for usuario in usuarios: %}
               <tr>
-                  <td>{{ usuario.id }}</td>
                   <td>{{ usuario.nome }}</td>
                   <td>{{ usuario.email }}</td>
                   <td>
                       <ul style="list-style: none;">
                           <li>
-                            <a href="/usuario/edit">
+                            <a href="{{ url_for('abrirEditarUsuario', index=usuario.id) }}">
                                 <button type="button" class="btn btn-warning">
                                     <i class="fas fa-pen"></i>
                                 </button>
                             </a>
 
-                            <button class="btn btn-danger">
-                                <i class="fas fa-trash"></i>
-                            </button>
+                            <a href="#">
+                                <button class="btn btn-danger">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </a>
                           </li>
                       </ul>
                   </td>
